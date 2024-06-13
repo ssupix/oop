@@ -10,6 +10,8 @@
 	<p id="company"></p>
 <p>Storage: <em id="storage"></em> </p>
 
+<button id="btn">next</button>
+
 </body>
 <script>
 
@@ -37,17 +39,33 @@ const nameOf = {
 // === Storing Data and Data stricture ====
 // The following is a JavaScript Object
 
-const device = {
-	type: "phone",
-	model_name: "Iphone 13 Pro Max",
-	developer: "Apple Inc.",
-	os: "iOS",
-	storage: [64, 128, 256, 512],
-	storagemin: function() {
-		return this.storage[0] + "mb"
+const apple_device = {
+		type: "phone",
+		model_name: "Iphone 13 Pro Max",
+		developer: "Apple Inc.",
+		os: "iOS",
+		storage: [64, 128, 256, 512],
+		storagemin: function() {
+			return this.storage[0] + "mb"
+		}
+
+	}
+	
+const android_device = {
+		type: "phone",
+		model_name: "Galaxy S24 Ultra",
+		developer: "Samsung",
+		os: "Android",
+		storage: [64, 128, 256, 512],
+		storagemin: function() {
+			return this.storage[3] + "mb"
+		}
+
 	}
 
-}
+
+
+
 
 // Dot notation: How to access the object's properties and methods
 // obj.property
@@ -55,12 +73,13 @@ const device = {
 
 
 // A variable stored within a JS object is a PROPERTY of that object
-document.getElementById('product').innerHTML = device.model_name;
-document.getElementById('company').innerHTML = device.developer;
-document.getElementById('os').innerHTML = device.os;
-
 // A function stored within a JS object is a METHOD of that object
-document.getElementById("storage").innerHTML = device.storagemin();
+
+document.getElementById('product').innerHTML = apple_device.model_name;
+document.getElementById('company').innerHTML = apple_device.developer;
+document.getElementById('os').innerHTML = apple_device.os;
+document.getElementById("storage").innerHTML = apple_device.storagemin();
+
 
 
 
