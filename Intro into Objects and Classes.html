@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Introduction to Objects and Classes </title>
+</head>
+<body>
+
+<h1 id="product"></h1>
+	<p id="company"></p>
+<p>Storage: <em id="storage"></em> </p>
+
+</body>
+<script>
+
+/* 
+=[ JAVASCRIPT OBJECTS ]= 
+An object is a collection of related data and/or functionality
+	- Data is organized into key:value pairs much like an associate array, and each key can contain a single value, or multiple values (an actual array)
+	- Functions can also be associated to an object, stored as a value (its key being how its called upon)
+
+To begin an object, you must create a container to hold the data/functions, commonly this declare as a let or const. 
+As a review: constants are block-scoped, much like variables defined using the let keyword. The contents of constant can be changed (added to array), and it can't be redeclared (same name used twice) or reassigned.
+
+JavaScript Object Syntax:
+
+const nameOf = {
+	key1: "string value",
+	key2: numeric,
+	key3: boolean,
+	key4: [ ],
+	key5: function() { result; }
+};
+
+*/
+
+// === Storing Data and Data stricture ====
+// The following is a JavaScript Object
+
+const device = {
+	type: "phone",
+	model_name: "Iphone 13 Pro Max",
+	developer: "Apple Inc.",
+	os: "iOS",
+	storage: [64, 128, 256, 512],
+	product: function() {
+		return this.model_name;
+	},
+	company: function() {
+		return this.developer;
+	},
+	memory: function() {
+		return this.storage;
+	}
+
+}
+
+const product = document.querySelector('#product').innerHTML = device.product();
+const company = document.querySelector('#company').innerHTML = device.developer();
+const storage = document.querySelector('#storage').innerHTML = device.memory[0];
+
+
+
+
+
+
+
+</script>
+</html>
