@@ -6,6 +6,7 @@
 <body>
 
 <h1 id="product"></h1>
+	<p id="os"></p>
 	<p id="company"></p>
 <p>Storage: <em id="storage"></em> </p>
 
@@ -52,10 +53,14 @@ const device = {
 // obj.property
 // obj.method()
 
-const product = document.querySelector('#product').innerHTML = device.product();
-const company = document.querySelector('#company').innerHTML = device.developer();
-const storage = document.querySelector('#storage').innerHTML = device.memory[0];
 
+// A variable stored within a JS object is a PROPERTY of that object
+document.getElementById('product').innerHTML = device.model_name;
+document.getElementById('company').innerHTML = device.developer;
+document.getElementById('os').innerHTML = device.os;
+
+// A function stored within a JS object is a METHOD of that object
+document.getElementById("storage").innerHTML = device.storagemin();
 
 
 
